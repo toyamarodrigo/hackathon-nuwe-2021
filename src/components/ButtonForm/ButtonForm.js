@@ -11,7 +11,7 @@ export const ButtonForm = ({ text }) => {
         fontWeight="500"
         h="64px"
         color="white"
-        w={{ xl: '100%' }}
+        w={{ base: '100%', xl: '80%' }}
       >
         {text}
       </Button>

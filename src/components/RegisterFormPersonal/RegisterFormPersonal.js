@@ -15,6 +15,7 @@ import {
 import { BasicLayout } from '../../layout';
 import { ButtonForm } from '../ButtonForm';
 import { RegisterNavigation } from '../RegisterNavigation';
+import { RegisterFormHeader } from '../RegisterFormHeader';
 import { FcGoogle } from 'react-icons/fc';
 
 export const RegisterFormPersonal = () => {
@@ -25,33 +26,36 @@ export const RegisterFormPersonal = () => {
   return (
     <BasicLayout>
       <RegisterNavigation step="01" title="Personal Info." url="/" />
-      <Stack px="127px" pt={78} justifyContent="center" spacing={5}>
-        <HStack w={{ lg: '100%' }}>
-          <Text fontWeight="700" fontSize="30px" lineHeight="36.31px">
-            Registra tu cuenta individual
-          </Text>
-        </HStack>
-        <HStack w={{ lg: '50%', xl: '80%' }}>
-          <Text fontSize="18px" lineHeight="28px" color="#8692A6">
-            Para poder revisar que se trata de una cuenta real, necesitamos la
-            siguiente información
-          </Text>
-        </HStack>
+      <Stack
+        px={{ base: '20px', md: '100px', xl: '127px' }}
+        pt={{ base: 47, xl: 78 }}
+        justifyContent="center"
+        spacing={5}
+      >
+        <RegisterFormHeader
+          title="Registra tu cuenta individual"
+          subtitle="Para poder revisar que se trata de una cuenta real, necesitamos la
+            siguiente información"
+        />
       </Stack>
-      <Stack pl="127px" pr="221px" pt={'40px'} spacing={6}>
-        <HStack w={{ lg: '50%', xl: '100%' }}>
+      <Stack
+        px={{ base: '20px', md: '100px', xl: '127px' }}
+        pt={{ base: '20px', xl: '40px' }}
+        spacing={{ base: 4, xl: 6 }}
+      >
+        <HStack w={{ base: '100%', xl: '80%' }}>
           <FormControl id="fullname" isRequired>
             <FormLabel>Nombre completo</FormLabel>
             <Input type="text" placeholder="Enter full name" h="64px" />
           </FormControl>
         </HStack>
-        <HStack w={{ lg: '50%', xl: '100%' }}>
+        <HStack w={{ base: '100%', xl: '80%' }}>
           <FormControl id="email" isRequired>
             <FormLabel>Correo electronico</FormLabel>
             <Input type="email" placeholder="Enter email address" h="64px" />
           </FormControl>
         </HStack>
-        <HStack w={{ lg: '50%', xl: '100%' }}>
+        <HStack w={{ base: '100%', xl: '80%' }}>
           <FormControl id="password" isRequired>
             <FormLabel>Contraseña</FormLabel>
             <InputGroup size="lg">
@@ -99,7 +103,7 @@ const RegisterWithGoogleButton = () => {
         fontWeight="500"
         h="64px"
         color="black"
-        w={{ xl: '100%' }}
+        w={{ base: '100%', xl: '80%' }}
         justifyContent="center"
         boxShadow={'0px 4px 10px rgba(0, 0, 0, 0.08)'}
       >

@@ -1,5 +1,14 @@
 import React from 'react';
-import { Box, HStack, Stack, Text, Image, Icon, Link } from '@chakra-ui/react';
+import {
+  Box,
+  HStack,
+  Stack,
+  Text,
+  Image,
+  Icon,
+  Link,
+  VStack,
+} from '@chakra-ui/react';
 import { FiUser, FiBriefcase } from 'react-icons/fi';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { BasicLayout } from '../../layout';
@@ -11,29 +20,36 @@ export const RegisterPage = () => {
   return (
     <BasicLayout>
       <IniciarSesion />
-      <Stack p={40} spacing={5}>
+      <Stack
+        py={{ base: 20, sm: 40, md: 40, lg: 40, xl: 40 }}
+        px={{ base: 4, sm: 20, md: 20, lg: 24, xl: 40 }}
+        spacing={5}
+        justifyContent="center"
+      >
         <HStack w={{ lg: '100%' }}>
           <Text fontWeight="700" fontSize="30px" lineHeight="36.31px">
             ¡Únete a la comunidad!
           </Text>
         </HStack>
-        <HStack w={{ lg: '50%', xl: '60%' }}>
+        <HStack w={{ lg: '100%' }}>
           <Text fontSize="18px" lineHeight="28px" color="#8692A6">
             Para empezar, dinos que cuenta te gustaría abrir.
           </Text>
         </HStack>
-        <ButtonContainer
-          icon={FiUser}
-          title="Developer"
-          subtitle="Cuenta personas para entrar en el mundo dev"
-          bgIcon={imgPoligon1}
-        />
-        <ButtonContainer
-          icon={FiBriefcase}
-          title="Business"
-          subtitle="Tienes o perteneces a una compañía"
-          bgIcon={imgPoligon2}
-        />
+        <Stack direction="column">
+          <ButtonContainer
+            icon={FiUser}
+            title="Developer"
+            subtitle="Cuenta personas para entrar en el mundo dev"
+            bgIcon={imgPoligon1}
+          />
+          <ButtonContainer
+            icon={FiBriefcase}
+            title="Business"
+            subtitle="Tienes o perteneces a una compañía"
+            bgIcon={imgPoligon2}
+          />
+        </Stack>
       </Stack>
     </BasicLayout>
   );
@@ -49,14 +65,14 @@ const ButtonContainer = ({ title, subtitle, icon, bgIcon }) => {
 
   return (
     <HStack
-      w={{ lg: '100%', xl: '426px' }}
-      py="15px"
-      px="30px"
+      w={{ base: '100%', sm: '100%', md: '100%', lg: '100%', xl: '100%' }}
+      py={{ base: '20px', sm: '20px', md: '24px' }}
+      px={{ base: '20px', sm: '30px', md: '20px', lg: '20px', xl: '30px' }}
       boxShadow="0px 4px 14px 1px #0000000a"
       borderRadius="6px"
       justifyContent="space-between"
       alignItems="center"
-      spacing={{ lg: 5 }}
+      spacing={{ base: 5 }}
       _hover={{ bg: '#F5F9FF', border: '1px solid #4F934A' }}
       onClick={() => handleOnClickAccount(title)}
     >
@@ -79,11 +95,12 @@ const ButtonContainer = ({ title, subtitle, icon, bgIcon }) => {
         </Box>
       </Stack>
       <Stack display="flex" direction="column" justifyContent="center">
-        <Image src="" />
-        <Text as={'h3'} fontWeight={500}>
+        <Text as={'h3'} fontWeight={500} fontSize="16px" lineHeight="19.36px">
           {title}
         </Text>
-        <Text>{subtitle}</Text>
+        <Text fontSize="14px" lineHeight="16.94px">
+          {subtitle}
+        </Text>
       </Stack>
       <ArrowForwardIcon color="#4F934A" />
     </HStack>

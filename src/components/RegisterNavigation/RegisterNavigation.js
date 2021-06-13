@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 export const RegisterNavigation = ({ step, title, url }) => {
   return (
-    <Stack mt="75px" zIndex={1}>
+    <Stack mt={{ base: '35px', xl: '75px' }} zIndex={1}>
       <Stack
         direction="row"
         alignItems="center"
         justifyContent="space-between"
         w="100%"
-        px={12}
+        px={{ base: 5, xl: 12 }}
       >
         <HStack>
           <Icon as={FiChevronLeft} color="#8692A6" w="20px" h="20px" />

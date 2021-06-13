@@ -1,12 +1,12 @@
 import React from 'react';
-import { Stack, Image, Text, Box, Link } from '@chakra-ui/react';
+import { Stack, Image, Text, Box } from '@chakra-ui/react';
 import backgroundImage from '../assets/background.png';
 
 export const BasicLayout = (props) => {
   return (
     <Stack
       pos="relative"
-      overflow="hidden"
+      overflow={{ base: 'none', xl: 'hidden' }}
       h="100vh"
       w="100vw"
       direction="row"
@@ -22,6 +22,11 @@ export const BasicLayout = (props) => {
         spacing={0}
       >
         <Image
+          display={{
+            base: 'none',
+            sm: 'none',
+            md: 'block',
+          }}
           src={backgroundImage}
           h="100%"
           w="full"
@@ -29,6 +34,11 @@ export const BasicLayout = (props) => {
           objectFit="cover"
         />
         <Box
+          display={{
+            base: 'none',
+            sm: 'none',
+            md: 'block',
+          }}
           pos="absolute"
           backgroundColor="#569B51"
           opacity={0.9}
@@ -37,7 +47,7 @@ export const BasicLayout = (props) => {
         />
         <Text
           pos="absolute"
-          maxW="473px"
+          maxW={{ md: '80%', lg: '80%' }}
           color="#FFFFFF"
           fontSize="20px"
           lineHeight="38px"
@@ -54,4 +64,3 @@ export const BasicLayout = (props) => {
     </Stack>
   );
 };
-
