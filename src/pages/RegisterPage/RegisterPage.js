@@ -4,10 +4,8 @@ import {
   HStack,
   Stack,
   Text,
-  Image,
   Icon,
   Link,
-  VStack,
 } from '@chakra-ui/react';
 import { FiUser, FiBriefcase } from 'react-icons/fi';
 import { ArrowForwardIcon } from '@chakra-ui/icons';

@@ -1,7 +1,7 @@
-import { Button, HStack } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import React from 'react';
 
-export const ButtonForm = ({ text }) => {
+export const ButtonForm = ({ text, loading }) => {
   return (
     <>
       <Button
@@ -12,6 +12,8 @@ export const ButtonForm = ({ text }) => {
         h="64px"
         color="white"
         w={{ base: '100%', xl: '80%' }}
+        isLoading={loading}
+        type="submit"
       >
         {text}
       </Button>
